@@ -1,0 +1,137 @@
+.tutoriais { padding: 40px 0 80px; }
+
+.tutoriais-container { display: flex; flex-direction: column; align-items: center; padding: 20px; }
+.tutoriais-container h2 { font-size: 2.8rem; color: var(--ink); margin: 20px 0; text-align: center; }
+.tutoriais-container p { font-size: 1.4rem; color: var(--muted); text-align: center; max-width: 800px; }
+
+.tutorial-grid {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.tutorial-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  border: 3px solid #E6F1F5;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: .3s;
+}
+.tutorial-card:hover { }
+.tutorial-icon { font-size: 4rem; }
+.tutorial-card h3 { color: var(--ink); font-size: 1.5rem; }
+.tutorial-card p { color: var(--muted); line-height: 1.7; }
+
+.tutorial-card button {
+  margin-top: auto;
+  background: var(--primary);
+  color: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: .3s;
+}
+.tutorial-card button:hover { background: var(--primary-dark); }
+
+/* ---------- Modal ---------- */
+.tutorial-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.tutorial-modal {
+  width: 600px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+}
+.tutorial-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #F3F4F6;
+  font-size: 1.1rem;
+}
+.tutorial-close:hover { background: #E5E7EB; }
+.tutorial-modal h2 { color: var(--ink); margin-bottom: 30px; font-size: 1.9rem; padding-right: 45px; }
+
+.progress-container { width: 100%; height: 12px; background: #E5E7EB; border-radius: 14px; overflow: hidden; margin-bottom: 40px; }
+.progress-bar { height: 100%; background: var(--accent); transition: .4s; }
+
+.tutorial-step { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; }
+.tutorial-step span {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.tutorial-step p { color: var(--text); font-size: 1.15rem; line-height: 1.8; }
+
+.tutorial-buttons { display: flex; justify-content: space-between; gap: 12px; }
+.tutorial-buttons button {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: .3s;
+}
+.tutorial-buttons button:hover { background: var(--primary-dark); }
+.tutorial-buttons button:disabled { opacity: .5; cursor: not-allowed; }
+
+@media (max-width: 1024px) {
+  .tutoriais-container h2 { font-size: 2.4rem; }
+  .tutoriais-container p { font-size: 1.25rem; }
+}
+
+@media (max-width: 768px) {
+  .tutoriais-container h2 { font-size: 2.1rem; }
+  .tutoriais-container p { font-size: 1.1rem; }
+  .tutorial-grid { grid-template-columns: 1fr; gap: 25px; }
+  .tutorial-card { padding: 28px; }
+  .tutorial-modal { width: 95%; padding: 35px 25px; }
+}
+
+@media (max-width: 480px) {
+  .tutoriais-container h2 { font-size: 1.8rem; }
+  .tutoriais-container p { font-size: 1rem; }
+  .tutorial-card { padding: 24px; border-radius: 24px; }
+  .tutorial-icon { font-size: 3rem; }
+  .tutorial-modal { width: 100%; padding: 30px 20px; border-radius: 24px; }
+  .tutorial-modal h2 { font-size: 1.5rem; }
+  .tutorial-step { flex-direction: column; text-align: center; gap: 15px; }
+  .tutorial-step span { width: 50px; height: 50px; font-size: 1.2rem; }
+  .tutorial-step p { font-size: 1rem; }
+  .tutorial-buttons { flex-direction: column; }
+  .tutorial-buttons button { width: 100%; padding: 16px; }
+}
+
+.tutorial-icon { color: var(--primary); }
+.tutorial-counter { color: var(--muted); font-weight: 700; margin: -15px 0 15px; }

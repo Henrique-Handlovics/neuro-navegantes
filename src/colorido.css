@@ -1,0 +1,178 @@
+/* ===========================================================
+   TEMA COLORIDO + FIGURAS + MOVIMENTO LEVE
+   Importado por último no main.jsx.
+=========================================================== */
+
+/* ---------- Cabeçalho e rodapé com faixa arco-íris ---------- */
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 5px;
+  background: var(--rainbow);
+}
+.header .logo .logo-mark { width: 70px; height: 35px; }
+
+.footer { position: relative; flex-wrap: wrap; }
+.footer::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 5px;
+  background: var(--rainbow);
+}
+.footer-motto { display: flex; flex-direction: column; align-items: center; gap: 6px; max-width: 280px; text-align: center; }
+.footer-infinity { width: 72px; height: 36px; }
+
+/* ---------- Início ---------- */
+.hero-section { background: linear-gradient(135deg, #E8F1FF 0%, #F1E8FF 50%, #FFF1E0 100%); }
+.hero-badge { background: #FFDDEB; color: #9D174D; }
+.hero-content h2 { color: var(--ink); }
+.cta-button { background: #4338CA; }
+.cta-button:hover { background: #3730A3; }
+.secondary-button { border-color: #4338CA; color: #4338CA; }
+.secondary-button:hover { background: #4338CA; color: #fff; }
+.hero-image img { max-width: 480px; }
+
+/* ---------- Seções em cores alternadas, separadas por faixa arco-íris ---------- */
+.assuntos-section,
+.videos-section,
+.tutoriais,
+.seguranca-section,
+.quiz-section {
+  border-top: 5px solid transparent;
+  border-image: var(--rainbow) 1;
+}
+.assuntos-section { background: #fff; }
+.videos-section { background: #F4F1FF; }
+.tutoriais { background: #F0FAF4; }
+.seguranca-section { background: #FFF7E8; }
+.quiz-section { background: #EEF6FF; }
+
+.videos-badge { background: #EADDFF; color: #5B21B6; }
+.seguranca-badge { background: #FFF3B8; color: #854D0E; }
+.quiz-badge { background: #D6EBFF; color: #1D4ED8; }
+
+/* ---------- Figuras decorativas nos títulos ---------- */
+.section-deco { display: flex; justify-content: center; margin-bottom: 14px; }
+.section-deco svg { width: 96px; height: auto; max-height: 64px; }
+
+/* ---------- Cards coloridos ---------- */
+.topic-icon,
+.security-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+.tutorial-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+.tutorial-card { border: none; }
+.tutorial-card button:hover { filter: brightness(.9); }
+
+.tip-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.tip-card svg { font-size: 1.3rem; }
+
+.quiz-card { border-top: 8px solid #4338CA; }
+.quiz-progress-fill { background: none; }
+
+.quiz-option:nth-child(1) .option-letter { background: #1D4ED8; }
+.quiz-option:nth-child(2) .option-letter { background: #15803D; }
+.quiz-option:nth-child(3) .option-letter { background: #6D28D9; }
+.quiz-option:nth-child(4) .option-letter { background: #B45309; }
+.quiz-option.correct .option-letter { background: var(--accent); }
+.quiz-option.incorrect .option-letter { background: #B45309; }
+.result-score { background: linear-gradient(135deg, #4338CA, #6D28D9); }
+
+/* ---------- Movimento leve ---------- */
+.reveal {
+  height: 100%;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+.topic-card,
+.video-card,
+.tutorial-card,
+.security-card,
+.tip-card {
+  height: 100%;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.topic-card:hover, .topic-card:focus-within,
+.video-card:hover, .video-card:focus-within,
+.tutorial-card:hover, .tutorial-card:focus-within,
+.security-card:hover,
+.tip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(30, 27, 75, .16);
+}
+
+.topic-icon, .video-icon, .security-icon, .tutorial-icon, .tip-icon { transition: transform .35s ease; }
+.topic-card:hover .topic-icon,
+.video-card:hover .video-icon,
+.security-card:hover .security-icon,
+.tutorial-card:hover .tutorial-icon,
+.tip-card:hover .tip-icon { transform: scale(1.08) rotate(-4deg); }
+
+/* ---------- Quem escolheu "Movimento reduzido" ---------- */
+html[data-motion="reduced"] .reveal { opacity: 1 !important; transform: none !important; }
+html[data-motion="reduced"] .topic-card:hover, html[data-motion="reduced"] .topic-card:focus-within,
+html[data-motion="reduced"] .video-card:hover, html[data-motion="reduced"] .video-card:focus-within,
+html[data-motion="reduced"] .tutorial-card:hover, html[data-motion="reduced"] .tutorial-card:focus-within,
+html[data-motion="reduced"] .security-card:hover,
+html[data-motion="reduced"] .tip-card:hover,
+html[data-motion="reduced"] .topic-card:hover .topic-icon,
+html[data-motion="reduced"] .video-card:hover .video-icon,
+html[data-motion="reduced"] .security-card:hover .security-icon,
+html[data-motion="reduced"] .tutorial-card:hover .tutorial-icon,
+html[data-motion="reduced"] .tip-card:hover .tip-icon { transform: none !important; }
+
+/* ---------- Alto contraste: tira cores decorativas ---------- */
+html[data-contrast="high"] .header::after,
+html[data-contrast="high"] .footer::before { display: none; }
+html[data-contrast="high"] .assuntos-section,
+html[data-contrast="high"] .videos-section,
+html[data-contrast="high"] .tutoriais,
+html[data-contrast="high"] .seguranca-section,
+html[data-contrast="high"] .quiz-section { background: #fff; border-image: none; border-top: 3px solid #000; }
+html[data-contrast="high"] .hero-section { background: #fff; }
+html[data-contrast="high"] .tip-icon { background: #fff !important; border: 2px solid #000; }
+html[data-contrast="high"] .tip-card svg { color: #000 !important; }
+html[data-contrast="high"] .tutorial-card button { background: #000 !important; }
+html[data-contrast="high"] .cta-button { background: #000; }
+html[data-contrast="high"] .secondary-button { border-color: #000; color: #000; }
+html[data-contrast="high"] .quiz-option .option-letter { background: #000 !important; }
+html[data-contrast="high"] .result-score { background: #000; }
+
+/* ---------- Telas pequenas ---------- */
+@media (max-width: 480px) {
+  .header .logo .logo-mark { width: 56px; height: 28px; }
+  .section-deco svg { width: 80px; }
+  .hero-image img { max-width: 300px; }
+}

@@ -1,0 +1,36 @@
+:root {
+  --primary: #4338CA;
+  --primary-dark: #2E2A6E;
+  --accent: #15803D;
+  --accent-dark: #166534;
+  --ink: #1E1B4B;
+  --text: #374151;
+  --muted: #4B5563;
+  --bg-soft: #F4F1FF;
+  --yellow-bg: #FDF3E3;
+  --yellow-ink: #7A4B00;
+  --rainbow: linear-gradient(90deg, #EF4444, #F97316, #FACC15, #22C55E, #3B82F6, #8B5CF6);
+  --font-title: 'Atkinson Hyperlegible', 'Segoe UI', sans-serif;
+  --font-body: 'Atkinson Hyperlegible', 'Segoe UI', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.25; }
+a { text-decoration: none; color: inherit; }
+button { border: none; cursor: pointer; font-family: inherit; }
+img { max-width: 100%; }
+
+/* Ajustes gerais do tema calmo */
+.hero-content h2 { text-wrap: balance; }

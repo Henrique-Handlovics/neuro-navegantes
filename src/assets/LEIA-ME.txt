@@ -1,0 +1,2 @@
+Para exibir o logo da Unisanta no rodape, coloque aqui um arquivo chamado
+logo-unisanta.png (ou .jpg/.svg/.webp). Ele aparece automaticamente.
